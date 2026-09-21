@@ -2,6 +2,11 @@
     <p 
         [ngStyle]="{'backgroundColor': item.gender == 'F' ? F_COLOR : M_COLOR}"
         [ngClass]="{'absent': !item.present}">
-        {{$index+1}}) {{item.name}} di {{item.city}} è {{item.gender}}
+        {{$index+1}}) {{item.name}} di {{item.city}} è 
+        @if(item.present) {
+            <span>presente</span>
+        } @else{
+            <span style="text-transform: uppercase;">presente</span>
+        }
     </p>
 }
